@@ -29,12 +29,10 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         run: sudo apt-get update && sudo apt-get install -y build-essential cmake ninja-build
 
-      - name: Build
-        uses: lukka/run-cmake@v10.0
-        with:
-          cmakeListsTxtPath: ${{ github.workspace }}/CMakeLists.txt
-          configurePreset: ${{ matrix.build_type }}
-          buildPreset: ${{ matrix.build_type }}
+      - name: Cmake pre
+        run: cmake --preset ${{ matrix.build_type }}
+      - name: Cmake build
+        run: cmake --build --preset ${{ matrix.build_type }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
