@@ -35,11 +35,11 @@ jobs:
         run: cmake --build --preset ${{ matrix.build_type }}
 
       - name: CMake install into build/
-        run: cmake --install build --prefix build/${{ matrix.build_type }}
+        run: cmake --install build/${{ matrix.build_type }} --prefix ./install
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
         with:
           name: niflib-${{ matrix.os }}-${{ matrix.build_type }}
           path: |
-            build/**/*
+            ./install/**/*
