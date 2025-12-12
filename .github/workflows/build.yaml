@@ -35,7 +35,7 @@ jobs:
         run: cmake --build --preset ${{ matrix.build_type }}
 
       - name: CMake install into build/
-        run: cmake --install build --prefix build
+        run: cmake --install build --prefix build/${{ matrix.build_type }}
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
