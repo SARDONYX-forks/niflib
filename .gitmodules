@@ -1,6 +1,7 @@
 [submodule "qhull"]
-	path = qhull
-	url = git://github.com/qhull/qhull.git
+    path = qhull
+    url = https://github.com/qhull/qhull.git
+
 [submodule "docsys"]
-	path = docsys
-	url = git@github.com:niftools/nifdocsys.git
+    path = docsys
+    url = https://github.com/niftools/nifdocsys.git
